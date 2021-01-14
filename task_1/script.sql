@@ -2,6 +2,6 @@ SELECT authors.name AS Author, GROUP_CONCAT(songs.name) AS Songs, SUM(listening.
 FROM authors
          INNER JOIN songs ON authors.id = songs.author_id
 	     INNER JOIN listening ON songs.id = listening.song_id
-GROUP BY authors.name
+GROUP BY Author
 ORDER BY Listenings DESC
 LIMIT 1, 3;

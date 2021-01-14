@@ -8,9 +8,9 @@ const POSITION = 'position';
 /**
  * @param int $id
  *
- * @return array
+ * @return string
  */
-function getFruitsById(int $id): array
+function getFruitsById(int $id): string
 {
 	$searchResult = [];
 	$result       = [];
@@ -31,7 +31,7 @@ function getFruitsById(int $id): array
 		$result[]= $item[FRUIT];
 	}
 
-	return $result;
+	return implode(', ', $result);
 }
 
-var_dump(getFruitsById(1));
+echo getFruitsById(1) . PHP_EOL;
