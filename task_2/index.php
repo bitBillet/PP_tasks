@@ -19,7 +19,7 @@ function getFruitsById(int $id): string
 		$parentId  = (int) $content[1];
 		$defaultId = (int) $content[0];
 		$status    = (int) $content[4];
-		if ($parentId === $id || $defaultId === $id && 1 === $status) {
+		if (($parentId === $id || $defaultId === $id) && 1 === $status) {
 			$searchResult[]= [POSITION => $content[3], FRUIT => $content[2]];
 		}
 	}
@@ -34,4 +34,4 @@ function getFruitsById(int $id): string
 	return implode(', ', $result);
 }
 
-echo getFruitsById(1) . PHP_EOL;
+echo getFruitsById(18) . PHP_EOL;
